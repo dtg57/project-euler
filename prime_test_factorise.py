@@ -3,7 +3,7 @@ import math
 # ordered list of primes that is updated as and when new primes are needed for isPrime() and primeFactorise()
 primes = [2, 3, 5]
 
-# dictionary with structure {number : array of prime factors, ...}
+# dictionary with structure  {number : array of prime factors, ...}
 prime_factors_dict = {}
         
 # 
@@ -30,7 +30,7 @@ def isPrime(n):
             div_cand += 1
         else:
             div_cand += 2
-		# recursively check whether div_cand is prime as we only need to result whether n is divisible by primes
+        # recursively check whether div_cand is prime as we only need to result whether n is divisible by primes
         if isPrime(div_cand)[0]:
             new_prime_count += 1
             primes.append(div_cand)
@@ -52,23 +52,15 @@ def primeFactorise(n):
     is_prime = isPrime(n)
     if is_prime[0]:
         return [n]
-	# result stores the current result after dividing n by all the prime factors found so far. We search for prime factors of this and divide until result itself is prime
+    # result stores the current result after dividing n by all the prime factors found so far. We search for prime factors of this and divide until result itself is prime
     result = n
     while not is_prime[0]:
         prime_factors.append(is_prime[1])
         result = int(result/is_prime[1])
-		# use our stored prime factors of other numbers to speed this up
+        # use our stored prime factors of other numbers to speed this up
         if result in prime_factors_dict:
             return prime_factors + prime_factors_dict[result]
         is_prime = isPrime(result)
     prime_factors.append(result)
     prime_factors_dict[n] = prime_factors
-    return prime_factors
-
-
-
-
-        
-        
-    
-    
+    return prime_factors  

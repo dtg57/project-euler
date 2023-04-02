@@ -8,7 +8,7 @@ prime_factors_dict = {}
         
 # 
 # results if given number n is prime
-# Returns tuple, first element is bool (True if prime); second element is a factor if not prime, 0 if prime
+# Returns tuple, first element is bool (True if prime); second element is smallest factor of n if n not prime, 0 if prime
 # Works by checking if n is divisible by all primes up to sqrt(n)
 #
 def isPrime(n):

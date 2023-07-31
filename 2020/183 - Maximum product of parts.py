@@ -3,7 +3,7 @@
 # Runtime: 00:01
 
 import math
-from Prime_Factoriser import primeFactorise
+from prime_test_factorise import primeFactorise
 
 def prodlist(l):
     if len(l) == 0:
